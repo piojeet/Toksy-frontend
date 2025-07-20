@@ -18,7 +18,7 @@ function SignUpPage() {
   // })
 
   // This is how we did it using our custom hook - optimize version
-  const {error, isPending, signupMutation} = useSignup()
+  const { error, isPending, signupMutation } = useSignup()
 
   const handleSignup = (e) => {
     e.preventDefault();
@@ -31,8 +31,16 @@ function SignUpPage() {
         <div className='w-full lg:w-1/2 p-4 sm:p-8 flex flex-col'>
           {/* LOGO */}
           <div className='mb-4 flex items-center justify-start gap-2'>
-            <ShipWheelIcon className='size-9 text-primary' />
-            <span className='text-3xl font-bold font-mono bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary tracking-wider'>Stramify</span>
+            <svg className='size-9' viewBox="0 0 100 147" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="50" cy="94" rx="50" ry="53" className='fill-primary' />
+              <ellipse cx="25.7992" cy="91.4002" rx="13.5" ry="21.5" transform="rotate(-9.30643 25.7992 91.4002)" className='fill-base-300' />
+              <ellipse cx="72.0246" cy="91.9912" rx="13.5" ry="21.5" transform="rotate(13.0375 72.0246 91.9912)" className='fill-base-300' />
+              <circle cx="15.5" cy="15.5" r="15.5" className='fill-primary' />
+              <circle cx="84.5" cy="15.5" r="15.5" className='fill-primary' />
+              <rect x="8" y="15.6983" width="12" height="39" transform="rotate(-23.0495 8 15.6983)" className='fill-primary' />
+              <rect x="77.8413" y="20" width="12" height="39" transform="rotate(32.3027 77.8413 20)" className='fill-primary' />
+            </svg>
+            <span className='text-3xl font-bold font-mono bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary tracking-wider'>Toksy</span>
           </div>
 
           {/* ERROR MESSAGE IF ANY */}
@@ -48,7 +56,7 @@ function SignUpPage() {
                 <div>
                   <h2 className='text-xl font-semibold'>Create an Account</h2>
                   <p className='text-sm opacity-70'>
-                    Join Streamify and start your language learning adventure!
+                    Join Toksy and start your language learning adventure!
                   </p>
                 </div>
 

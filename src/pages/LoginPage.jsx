@@ -10,15 +10,15 @@ function LoginPage() {
     password: "",
   });
 
-// This is how we did it first version, without signg our custom hook
+  // This is how we did it first version, without signg our custom hook
   // const queryClient = useQueryClient();
   // const { mutate: loginMutation, isPending, error } = useMutation({
   //   mutationFn: login,
   //   onSuccess: () => queryClient.invalidateQueries({ queryKey: ["authUser"] })
   // })
 
-// This is how we did it using our custom hook - optimize version
-  const {isPending,error, loginMutation} = useLogin();
+  // This is how we did it using our custom hook - optimize version
+  const { isPending, error, loginMutation } = useLogin();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -32,8 +32,16 @@ function LoginPage() {
         <div className='w-full lg:w-1/2 p-4 sm:p-8 flex flex-col'>
           {/* LOGO */}
           <div className='mb-4 flex items-center justify-start gap-2'>
-            <ShipWheelIcon className='size-9 text-primary' />
-            <span className='text-3xl font-bold font-mono bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary tracking-wider'>Streamify</span>
+            <svg className='size-9' viewBox="0 0 100 147" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="50" cy="94" rx="50" ry="53" className='fill-primary' />
+              <ellipse cx="25.7992" cy="91.4002" rx="13.5" ry="21.5" transform="rotate(-9.30643 25.7992 91.4002)" className='fill-base-300' />
+              <ellipse cx="72.0246" cy="91.9912" rx="13.5" ry="21.5" transform="rotate(13.0375 72.0246 91.9912)" className='fill-base-300' />
+              <circle cx="15.5" cy="15.5" r="15.5" className='fill-primary' />
+              <circle cx="84.5" cy="15.5" r="15.5" className='fill-primary' />
+              <rect x="8" y="15.6983" width="12" height="39" transform="rotate(-23.0495 8 15.6983)" className='fill-primary' />
+              <rect x="77.8413" y="20" width="12" height="39" transform="rotate(32.3027 77.8413 20)" className='fill-primary' />
+            </svg>
+            <span className='text-3xl font-bold font-mono bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary tracking-wider'>Toksy</span>
           </div>
 
           {/* ERROR MESSAGE DISPLAY */}
@@ -58,34 +66,34 @@ function LoginPage() {
                     <label className='label'>
                       <span className='label-text'>Email</span>
                     </label>
-                    <input 
-                    type="email"
-                    placeholder='hello@gmail.com'
-                    className='input input-bordered w-full'
-                    value={loginData.email}
-                    onChange={(e) => setLoginData({...loginData, email: e.target.value})}
-                    required
+                    <input
+                      type="email"
+                      placeholder='hello@gmail.com'
+                      className='input input-bordered w-full'
+                      value={loginData.email}
+                      onChange={(e) => setLoginData({ ...loginData, email: e.target.value })}
+                      required
                     />
                   </div>
                   <div className='form-control w-full space-y-2'>
                     <label className='label'>
                       <span className='label-text'>Password</span>
                     </label>
-                    <input 
-                    type="password"
-                    placeholder='●●●●●●'
-                    className='input input-bordered w-full'
-                    value={loginData.password}
-                    onChange={(e) => setLoginData({...loginData, password: e.target.value})}
-                    required
+                    <input
+                      type="password"
+                      placeholder='●●●●●●'
+                      className='input input-bordered w-full'
+                      value={loginData.password}
+                      onChange={(e) => setLoginData({ ...loginData, password: e.target.value })}
+                      required
                     />
                   </div>
 
                   <button type='submit' className='btn btn-primary w-full' disabled={isPending}>
                     {isPending ? (
                       <>
-                      <span className='loading loading-spinner loading-xs'></span>
-                      Signin in...
+                        <span className='loading loading-spinner loading-xs'></span>
+                        Signin in...
                       </>
                     ) : (
                       "Sign In"
@@ -96,7 +104,7 @@ function LoginPage() {
                     <p className='text-sm'>
                       Don't have an account?{" "}
                       <Link to="/signup" className='text-primary hover:underline'>
-                      Create one
+                        Create one
                       </Link>
                     </p>
                   </div>
@@ -108,19 +116,19 @@ function LoginPage() {
 
         {/* IMAGE SECTION */}
         <div className='hidden lg:flex w-full lg:w-1/2 bg-primary/10 items-center justify-center'>
-        <div className='max-w-md p-8'>
-          {/* Illustration */}
-          <div className='relative aspect-square max-w-sm mx-auto'>
-            <img src="https://res.cloudinary.com/dwf7aydzq/image/upload/v1751833870/Video_call-bro_dho3sg.svg" alt="Language connection illustration" className='w-full h-full' />
-          </div>
+          <div className='max-w-md p-8'>
+            {/* Illustration */}
+            <div className='relative aspect-square max-w-sm mx-auto'>
+              <img src="https://res.cloudinary.com/dwf7aydzq/image/upload/v1751833870/Video_call-bro_dho3sg.svg" alt="Language connection illustration" className='w-full h-full' />
+            </div>
 
-          <div className='text-center space-y-3 mt-6'>
-            <h2 className='text-xl font-semibold'>Connect with language partners worldwide</h2>
-            <p className='opacity-70'>
-              Practice conversations, make friend and improve your language skills together
-            </p>
+            <div className='text-center space-y-3 mt-6'>
+              <h2 className='text-xl font-semibold'>Connect with language partners worldwide</h2>
+              <p className='opacity-70'>
+                Practice conversations, make friend and improve your language skills together
+              </p>
+            </div>
           </div>
-        </div>
         </div>
       </div>
     </div>

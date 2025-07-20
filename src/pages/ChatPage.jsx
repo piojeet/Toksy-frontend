@@ -68,7 +68,7 @@ function ChatPage() {
   }, [tokenData, authUser, targetUserId]);
 
   const handleVideoCall = () => {
-    if(channel) {
+    if (channel) {
       const callUrl = `${window.location.origin}/call/${channel.id}`;
 
       channel.sendMessage({
@@ -82,7 +82,7 @@ function ChatPage() {
   if (loading || !chatClient || !channel) return <ChatLoader />;
 
   return (
-    <div className='h-[93vh]'>
+    <div className='h-[calc(100vh-64px)]'>
       <Chat client={chatClient}>
         <Channel channel={channel}>
           <div className='w-full relative'>
