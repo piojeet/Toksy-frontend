@@ -6,6 +6,7 @@ import { CheckCircleIcon, MapPinIcon, UserPlusIcon, UsersIcon } from 'lucide-rea
 import FriendCard, { getLanguageFlag } from '../components/FriendCard';
 import NoFriendsFound from '../components/NoFriendsFound';
 import { capitialize } from '../lib/utils';
+import { useThemeStore } from '../store/useThemeStore';
 
 function HomePage() {
 
@@ -43,8 +44,10 @@ function HomePage() {
     }
   }, [outgoinFriendReqs])
 
+   const {theme} = useThemeStore()
+
   return (
-    <div className='p-4 sm:p-6 lg:p-8'>
+    <div className='p-4 sm:p-6 lg:p-8 overflow-y-auto h-full' data-theme={theme}>
       <div className='container mx-auto space-y-10'>
         <div className='flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4'>
           <h2 className='text-2xl sm:text-3xl font-bold tracking-tight'>Your Friends</h2>
