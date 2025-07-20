@@ -1,5 +1,5 @@
 import React from 'react'
-import { LoaderIcon } from 'react-hot-toast'
+import { LoaderIcon } from "lucide-react";
 
 
 function ChatLoader() {
